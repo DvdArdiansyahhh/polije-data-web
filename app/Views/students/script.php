@@ -7,7 +7,7 @@
         $.ajax({
             url: `/data/students?page=${page}`,
             data: {
-                name: $('#keyword').val(),
+                keyword: $('#keyword').val(),
             },
             method: 'POST',
             dataType: 'JSON',

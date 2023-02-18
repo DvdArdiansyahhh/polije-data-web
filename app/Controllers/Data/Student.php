@@ -17,14 +17,14 @@ class Student extends BaseController
 
     public function index()
     {
-        $perPage = esc($this->request->getVar('perPage') ?? $this->perPage);
-        $page = esc($this->request->getVar('page') ?? 0);
-        $name = esc($this->request->getVar('name') ?? '');
+        $perPage = intval($this->request->getVar('perPage') ?? $this->perPage);
+        $page = intval($this->request->getVar('page') ?? 0);
+        $keyword = $this->request->getVar('keyword') ?? '';
 
         $students = $this->db->table('students')
             ->select('students.id, students.regist_id, regist_number, fullname, nim, admission, phone')
             ->join('registers', 'students.regist_id = registers.regist_id')
-            ->like('registers.fullname', $name)
+            ->like('fullname', $keyword)
             ->orderBy('students.id', 'ASC');
 
         $total = $students->countAllResults(false);
@@ -34,6 +34,7 @@ class Student extends BaseController
             'students' => $students->getResult(),
             'total' => $total,
             'next' => floor($total / $perPage - $page) > 0,
+            'keyword' => $keyword,
         ]);
     }
 }
