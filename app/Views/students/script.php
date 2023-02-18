@@ -1,14 +1,20 @@
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 <script>
     let page = 0;
+    let isNext = true;
 
     function loadStudents(overwrite = false) {
         $.ajax({
             url: `/data/students?page=${page}`,
+            data: {
+                name: $('#keyword').val(),
+            },
             method: 'POST',
             dataType: 'JSON',
             success(res) {
                 const sWrapper = $('#student-wrapper');
+
+                if (overwrite) sWrapper.empty();
 
                 res.students.map((student) => {
                     sWrapper.append(`
@@ -35,6 +41,8 @@
                     </div>
                     `);
 
+                    isNext = res.next;
+
                     $('#student-loader').addClass('d-none');
                     feather.replace();
                 });
@@ -46,13 +54,18 @@
         const scrollHeight = $(document).height();
         const scrollPosition = $(window).height() + $(window).scrollTop();
 
-        if (scrollHeight - scrollPosition <= 5) {
+        if (scrollHeight - scrollPosition <= 5 && isNext) {
             ++page;
 
             $('#student-loader').removeClass('d-none');
             loadStudents();
         }
     }
+
+    $('#keyword').keyup(function() {
+        page = 0;
+        loadStudents(true);
+    });
 
     $(window).on('scroll', loadMore);
     $(document.body).on('touchmove', loadMore);

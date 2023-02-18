@@ -17,10 +17,9 @@ class Student extends BaseController
 
     public function index()
     {
-        sleep(1);
-        $perPage = $this->request->getVar('perPage') ?? $this->perPage;
-        $page = $this->request->getVar('page') ?? 0;
-        $name = $this->request->getVar('name') ?? '';
+        $perPage = esc($this->request->getVar('perPage') ?? $this->perPage);
+        $page = esc($this->request->getVar('page') ?? 0);
+        $name = esc($this->request->getVar('name') ?? '');
 
         $students = $this->db->table('students')
             ->select('students.id, students.regist_id, regist_number, fullname, nim, admission, phone')
