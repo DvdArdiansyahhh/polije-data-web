@@ -27,7 +27,7 @@
                                     <div class="d-flex">
                                         <a href="" title="Ijazah"><i data-feather="image" class="detail-icon"></i></a>
                                         <a href="" title="Form PP" class="ms-2"><i data-feather="file-text" class="detail-icon"></i></a>
-                                        <a href="" title="WhatsApp" class="ms-2"><i data-feather="message-square" class="detail-icon"></i></a>
+                                        <a href="https://api.whatsapp.com/send?phone=${ student.phone.replace(/^0/, '62') }" title="WhatsApp" class="ms-2"><i data-feather="message-square" class="detail-icon"></i></a>
                                     </div>
                                 </div>
                             </div>

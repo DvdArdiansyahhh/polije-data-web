@@ -23,7 +23,7 @@ class Student extends BaseController
         $name = $this->request->getVar('name') ?? '';
 
         $students = $this->db->table('students')
-            ->select('students.id, students.regist_id, regist_number, fullname, nim, admission')
+            ->select('students.id, students.regist_id, regist_number, fullname, nim, admission, phone')
             ->join('registers', 'students.regist_id = registers.regist_id')
             ->like('registers.fullname', $name)
             ->orderBy('students.id', 'ASC');
