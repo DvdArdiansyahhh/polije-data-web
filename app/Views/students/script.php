@@ -40,12 +40,12 @@
                         </div>
                     </div>
                     `);
-
-                    isNext = res.next;
-
-                    $('#student-loader').addClass('d-none');
-                    feather.replace();
                 });
+
+                isNext = res.next;
+
+                $('#student-loader').addClass('d-none');
+                feather.replace();
             }
         });
     }
@@ -64,6 +64,8 @@
 
     $('#keyword').keyup(function() {
         page = 0;
+
+        $('#student-loader').removeClass('d-none');
         loadStudents(true);
     });
 
