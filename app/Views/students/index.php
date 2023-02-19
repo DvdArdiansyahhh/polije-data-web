@@ -41,6 +41,10 @@
     p {
         margin: 0;
     }
+
+    #detail-modal .modal-body {
+        min-height: 80vh;
+    }
 </style>
 <div class="modal modal-lg" tabindex="-1" id="detail-modal">
     <div class="modal-dialog modal-dialog-scrollable">
@@ -49,7 +53,14 @@
                 <h5 class="modal-title">Detail Mahasiswa</h5>
                 <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body row">
+            <div class="modal-body d-flex align-items-center justify-content-center" id="loader">
+                <div class="d-flex justify-content-center">
+                    <div class="spinner-border" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body row d-none" id="detail-data">
                 <div class="col-md-6">
                     <h6 class="text-center mt-4"><i data-feather="user" class="me-2"></i> Biodata</h6>
 

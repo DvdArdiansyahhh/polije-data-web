@@ -1,16 +1,23 @@
 <script>
-    function showStudentDetail(student) {
-        const modal = new bootstrap.Modal('#detail-modal');
+    const detailModal = new bootstrap.Modal('#detail-modal');
+    const detailModalEl = $('#detail-modal');
 
+    function showStudentDetail(student) {
         Object.keys(student).forEach((prop, index) => {
             $(`#detail-modal #${prop}-text`).text(student[prop]);
         });
 
-        modal.show();
+        detailModalEl.find('#loader').addClass('d-none');
+        detailModalEl.find('#detail-data').removeClass('d-none');
     }
 
     $('#student-wrapper').on('click', '.student-name', function(e) {
         e.preventDefault();
+
+        detailModalEl.find('#detail-data').addClass('d-none');
+        detailModalEl.find('#loader').removeClass('d-none');
+        detailModal.show();
+
 
         $.ajax({
             url: '/data/students/' + $(this).data('id'),
@@ -29,6 +36,8 @@
                     timer: 1500,
                     showConfirmButton: false,
                 });
+
+                detailModal.hide();
             }
         });
     });
