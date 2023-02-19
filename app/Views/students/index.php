@@ -20,7 +20,7 @@
 
 <?= $this->section('content') ?>
 <div class="row justify-content-center mt-5">
-    <div class="col-md-6">
+    <div class="col-md-6 d-flex">
         <div class="input-group mb-3">
             <span class="input-group-text">
                 <i data-feather="search"></i>
@@ -37,9 +37,92 @@
     </div>
 </div>
 
-<h1 id="post"></h1>
+<style>
+    p {
+        margin: 0;
+    }
+</style>
+<div class="modal modal-lg" tabindex="-1" id="detail-modal">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Detail Mahasiswa</h5>
+                <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body row">
+                <div class="col-md-6">
+                    <h6 class="text-center mt-4"><i data-feather="user" class="me-2"></i> Biodata</h6>
+
+                    <ul class="list-group m-3">
+                        <li class="list-group-item">
+                            <p class="fw-bold">Nama</p>
+                            <p>-</p>
+                        </li>
+                        <li class="list-group-item">
+                            <p class="fw-bold">NIM</p>
+                            <p>-</p>
+                        </li>
+                        <li class="list-group-item">
+                            <p class="fw-bold">Tempat Lahir</p>
+                            <p>-</p>
+                        </li>
+                        <li class="list-group-item">
+                            <p class="fw-bold">Tanggal Lahir</p>
+                            <p>-</p>
+                        </li>
+                        <li class="list-group-item">
+                            <p class="fw-bold">No HP</p>
+                            <p>-</p>
+                        </li>
+                        <li class="list-group-item">
+                            <p class="fw-bold">Asal Sekolah</p>
+                            <p>-</p>
+                        </li>
+                        <li class="list-group-item">
+                            <p class="fw-bold">Alamat</p>
+                            <p>-</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-6">
+                    <h6 class="text-center mt-4"><i data-feather="file" class="me-2"></i> Akademik</h6>
+
+                    <ul class="list-group m-3">
+                        <li class="list-group-item">
+                            <p class="fw-bold">Jurusan</p>
+                            <p>-</p>
+                        </li>
+                        <li class="list-group-item">
+                            <p class="fw-bold">Jalur Masuk</p>
+                            <p>-</p>
+                        </li>
+                    </ul>
+
+                    <h6 class="text-center mt-4"><i data-feather="columns" class="me-2"></i> Administrasi</h6>
+
+                    <ul class="list-group m-3">
+                        <li class="list-group-item">
+                            <p class="fw-bold">Biaya UKT</p>
+                            <p>-</p>
+                        </li>
+                        <li class="list-group-item">
+                            <p class="fw-bold">Biaya SPI / Lainnya</p>
+                            <p>-</p>
+                        </li>
+                        <li class="list-group-item">
+                            <p class="fw-bold">No Briva</p>
+                            <p>-</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <?= $this->endSection() ?>
 
 <?= $this->section('script') ?>
 <?= $this->include('students/script') ?>
+<?= $this->include('students/detail') ?>
 <?= $this->endSection() ?>

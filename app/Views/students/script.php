@@ -19,13 +19,15 @@
                 res.students.map((student) => {
                     sWrapper.append(`
                     <div class="col-md-4">
-                        <div class="card mt-4">
+                        <div class="card mt-4 shadow-sm">
                             <div class="card-body row g-2 student-card">
                                 <div class="col-3">
                                     <i data-feather="user" class="profile-icon"></i>
                                 </div>
                                 <div class="col-9">
-                                    <h5 class="card-title">${ student.fullname }</h5>
+                                    <h5 class="card-title">
+                                        <a href="#" data-id="${ student.id }" class="text-decoration-none text-light student-name">${ student.fullname }</a>
+                                    </h5>
                                     <p class="card-text mb-0">
                                         <span class="text-muted">${ student.nim }</span>
                                         - ${ student.admission }

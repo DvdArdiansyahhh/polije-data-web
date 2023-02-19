@@ -4,6 +4,7 @@ namespace App\Controllers\Data;
 
 use App\Controllers\BaseController;
 use CodeIgniter\Database\MySQLi\Connection;
+use CodeIgniter\Exceptions\PageNotFoundException;
 
 class Student extends BaseController
 {
@@ -35,6 +36,22 @@ class Student extends BaseController
             'total' => $total,
             'next' => floor($total / $perPage - $page) > 0,
             'keyword' => $keyword,
+        ]);
+    }
+
+    public function show($id)
+    {
+        $student = $this->db->table('students')
+            ->join('registers', 'students.regist_id = registers.regist_id')
+            ->where('students.id', $id)
+            ->get()
+            ->getFirstRow();
+
+        if (!$student) throw new PageNotFoundException('Student Not Found');
+
+        return $this->response->setStatusCode(200)->setJSON([
+            'message' => 'Success get student data',
+            'student' => $student,
         ]);
     }
 }

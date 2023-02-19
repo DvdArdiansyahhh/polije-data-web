@@ -30,7 +30,11 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+
+// Student data (JSON)
 $routes->post('/data/students', 'Data\Student');
+$routes->post('/data/students/(:num)', 'Data\Student::show/$1');
+
 $routes->get('/students', 'Student');
 
 /*
