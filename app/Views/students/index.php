@@ -56,31 +56,31 @@
                     <ul class="list-group m-3">
                         <li class="list-group-item">
                             <p class="fw-bold">Nama</p>
-                            <p>-</p>
+                            <p id="fullname-text">-</p>
                         </li>
                         <li class="list-group-item">
                             <p class="fw-bold">NIM</p>
-                            <p>-</p>
+                            <p id="nim-text">-</p>
                         </li>
                         <li class="list-group-item">
                             <p class="fw-bold">Tempat Lahir</p>
-                            <p>-</p>
+                            <p id="born_place-text">-</p>
                         </li>
                         <li class="list-group-item">
                             <p class="fw-bold">Tanggal Lahir</p>
-                            <p>-</p>
+                            <p id="born_date-text">-</p>
                         </li>
                         <li class="list-group-item">
                             <p class="fw-bold">No HP</p>
-                            <p>-</p>
+                            <p id="phone-text">-</p>
                         </li>
                         <li class="list-group-item">
                             <p class="fw-bold">Asal Sekolah</p>
-                            <p>-</p>
+                            <p id="school-text">-</p>
                         </li>
                         <li class="list-group-item">
                             <p class="fw-bold">Alamat</p>
-                            <p>-</p>
+                            <p id="address-text">-</p>
                         </li>
                     </ul>
                 </div>
@@ -91,11 +91,11 @@
                     <ul class="list-group m-3">
                         <li class="list-group-item">
                             <p class="fw-bold">Jurusan</p>
-                            <p>-</p>
+                            <p id="major-text">-</p>
                         </li>
                         <li class="list-group-item">
                             <p class="fw-bold">Jalur Masuk</p>
-                            <p>-</p>
+                            <p id="admission-text">-</p>
                         </li>
                     </ul>
 
@@ -104,15 +104,15 @@
                     <ul class="list-group m-3">
                         <li class="list-group-item">
                             <p class="fw-bold">Biaya UKT</p>
-                            <p>-</p>
+                            <p id="ukt_cost-text">-</p>
                         </li>
                         <li class="list-group-item">
                             <p class="fw-bold">Biaya SPI / Lainnya</p>
-                            <p>-</p>
+                            <p id="etc_cost-text">-</p>
                         </li>
                         <li class="list-group-item">
                             <p class="fw-bold">No Briva</p>
-                            <p>-</p>
+                            <p id="briva-text">-</p>
                         </li>
                     </ul>
                 </div>

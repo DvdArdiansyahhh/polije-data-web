@@ -2,6 +2,10 @@
     function showStudentDetail(student) {
         const modal = new bootstrap.Modal('#detail-modal');
 
+        Object.keys(student).forEach((prop, index) => {
+            $(`#detail-modal #${prop}-text`).text(student[prop]);
+        });
+
         modal.show();
     }
 
