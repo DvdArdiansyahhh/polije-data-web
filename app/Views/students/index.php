@@ -33,10 +33,10 @@
     <div class="col-md-3 pt-3">
         <h6>Total: <span id="total-results" class="ms-2">-</span></h6>
     </div>
-    <div class="col-md-3">
-        <div class="input-group">
+    <div class="col-md-2">
+        <div class="input-group input-group-sm">
             <span class="input-group-text">
-                <i data-feather="chevrons-up"></i>
+                <i style="width: 18px;" data-feather="chevrons-up"></i>
             </span>
             <select id="order" class="form-control">
                 <option value="">-- Urut Berdasar --</option>
