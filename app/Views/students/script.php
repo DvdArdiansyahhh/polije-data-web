@@ -8,6 +8,7 @@
             url: `/data/students?page=${page}`,
             data: {
                 keyword: $('#keyword').val(),
+                order: $('#order').val(),
             },
             method: 'POST',
             dataType: 'JSON',
@@ -47,6 +48,8 @@
                 isNext = res.next;
 
                 $('#student-loader').addClass('d-none');
+                $('#total-results').text(`${res.total} data`);
+
                 feather.replace();
             }
         });
@@ -65,6 +68,13 @@
     }
 
     $('#keyword').keyup(function() {
+        page = 0;
+
+        $('#student-loader').removeClass('d-none');
+        loadStudents(true);
+    });
+
+    $('#order').change(function() {
         page = 0;
 
         $('#student-loader').removeClass('d-none');

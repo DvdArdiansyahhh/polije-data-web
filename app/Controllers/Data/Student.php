@@ -21,12 +21,14 @@ class Student extends BaseController
         $perPage = intval($this->request->getVar('perPage') ?? $this->perPage);
         $page = intval($this->request->getVar('page') ?? 0);
         $keyword = $this->request->getVar('keyword') ?? '';
+        $order = $this->request->getVar('order');
 
         $students = $this->db->table('students')
             ->select('students.id, students.regist_id, regist_number, fullname, nim, admission, phone')
             ->join('registers', 'students.regist_id = registers.regist_id')
-            ->like('fullname', $keyword)
-            ->orderBy('students.id', 'ASC');
+            ->like('fullname', $keyword);
+
+        if ($order) $students->orderBy($order, 'ASC');
 
         $total = $students->countAllResults(false);
         $students = $students->get($perPage, $page * $perPage);

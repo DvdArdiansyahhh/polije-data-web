@@ -29,7 +29,25 @@
         </div>
     </div>
 </div>
-<div class="row justify-content-center mt-4 mb-4" id="student-wrapper">
+<div class="row justify-content-between mt-4">
+    <div class="col-md-3 pt-3">
+        <h6>Total: <span id="total-results" class="ms-2">-</span></h6>
+    </div>
+    <div class="col-md-3">
+        <div class="input-group">
+            <span class="input-group-text">
+                <i data-feather="chevrons-up"></i>
+            </span>
+            <select id="order" class="form-control">
+                <option value="">-- Urut Berdasar --</option>
+                <option value="fullname">Nama</option>
+                <option value="nim">NIM</option>
+                <option value="born_date">Tanggal Lahir</option>
+            </select>
+        </div>
+    </div>
+</div>
+<div class="row justify-content-center mb-4" id="student-wrapper">
 </div>
 <div class="d-flex justify-content-center" id="student-loader">
     <div class="spinner-border" role="status">
