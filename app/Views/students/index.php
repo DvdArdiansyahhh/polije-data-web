@@ -15,6 +15,10 @@
     .student-card {
         min-height: 145px;
     }
+
+    #filter-button {
+        cursor: pointer;
+    }
 </style>
 <?= $this->endSection() ?>
 
@@ -26,6 +30,9 @@
                 <i data-feather="search"></i>
             </span>
             <input type="text" name="" id="keyword" class="form-control" placeholder="Cari..." autofocus>
+            <span class="input-group-text" id="filter-button">
+                <i data-feather="filter"></i>
+            </span>
         </div>
     </div>
 </div>
@@ -145,6 +152,20 @@
                         </li>
                     </ul>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="filter-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Filter</h5>
+                <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
             </div>
         </div>
     </div>

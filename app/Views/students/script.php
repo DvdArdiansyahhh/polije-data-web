@@ -81,6 +81,10 @@
         loadStudents(true);
     });
 
+    $('#filter-button').click(function() {
+        (new bootstrap.Modal('#filter-modal')).show();
+    });
+
     $(window).on('scroll', loadMore);
     $(document.body).on('touchmove', loadMore);
 
